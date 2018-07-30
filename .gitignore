@@ -1,0 +1,51 @@
+*.py[cod]
+
+# vim
+*.swp
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Log Files
+*.log
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Developer
+nb-configuration.xml
+
+# virtualenv
+venv
+
+# Sphinx
+docs/_build
+
+# Other
+TODO.txt
+deploy.py
+

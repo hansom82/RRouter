@@ -1,0 +1,22 @@
+Raspberry Pi Router/Server simple control script.
+   * by ph0x0en1x (https://ph0en1x.net). 
+
+
+Script features:
+ + 5 switches control,
+ + Showing simple menu in 5 lines,
+ + Show on display current BTC, ETH, USD, EUR rates,
+ + Show on display CPU and BOX temp, MEMORY load and internet connection status,
+ + Idle mode animations on display,
+ + Warn by LED and BUZZER when internet connection is lost,
+ + Power OFF Raspberry Pi safely from menu.
+
+
+Construction and Hardware part:
+https://ph0en1x.net/104-raspberry-pi-handmade-server-router-hardware.html
+
+Software part:
+https://ph0en1x.net/105-raspberry-pi-handmade-server-router-software.html
+
+
+
