@@ -11,11 +11,12 @@
 
 
 """ Raspberry Pi Router/Server simple control script.
-
+    v.1.0
 """
 
 
 import os
+import sys
 import RPi.GPIO as GPIO
 
 from daemonize import Daemonize
@@ -52,10 +53,10 @@ class RRouter(object):
         self.last_key_press_time = 0
         
         self.wake_up_last_time = 0
-        self.wake_up_timeout = 20
+        self.wake_up_timeout = 3 # 20
         
         self.inet_check_last_time = 0
-        self.inet_check_timeout = 30
+        self.inet_check_timeout = 5 # 40
         self.inet_check_sound_notified = False
         
         self.oled = None
@@ -173,7 +174,6 @@ class RRouter(object):
         files.sort()
         for i in range(0, repeat):
             for img_file in files:
-                print(img_file)
                 self.show_image_center(img_file)
     
     def show_image_center(self, img_file=''):
@@ -237,9 +237,13 @@ def main():
     rr.prepare()
     rr.start()
 
+if len(sys.argv) == 2 and sys.argv[1] == '--manual':
+    main()
+else:
+    daemon = Daemonize(
+        app="rrouter-daemon",
+        pid='/tmp/rrouter-daemon.pid',
+        action=main)
+    daemon.start()
 
-daemon = Daemonize(
-    app="rrouter-daemon",
-    pid='/tmp/rrouter-daemon.pid',
-    action=main)
-daemon.start()
+

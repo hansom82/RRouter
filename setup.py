@@ -29,6 +29,6 @@ setup(
     license = "LICENSE.txt",
     keywords = "raspberry pi server router script linux",
     
-    platforms = ['linux'],
+    platforms = ['linux', 'Raspbian'],
     install_requires=required,
     )

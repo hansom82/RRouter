@@ -63,7 +63,6 @@ class Display(object):
         y = int((self.oled.height - height) / 2)
         self.draw.bitmap((x, y), pic, fill=255)
         
-    
     def clean(self):
         """ Clean display. """
         self.draw.rectangle((

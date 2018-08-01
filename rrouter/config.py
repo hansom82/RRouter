@@ -30,4 +30,4 @@ sounds_is_on = 1
 aminations_is_on = 1
 animation_sets = ['deb', 'atom', 'cat']
 # Time in seconds from the last key press after which menu will hide.
-idle_time_to_sleep = 20
+idle_time_to_sleep = 10
