@@ -44,7 +44,7 @@ class RRouter(object):
         self.sounds_is_on = True
         self.animations_is_on = True
         self.animation_sets = []
-        self.idle_time_to_sleep = 5
+        self.idle_time_to_sleep = 8
         self.oled_port = 1
         self.oled_i2c_address = 0x0
         self.images_path = ''
@@ -53,10 +53,10 @@ class RRouter(object):
         self.last_key_press_time = 0
         
         self.wake_up_last_time = 0
-        self.wake_up_timeout = 3 # 20
+        self.wake_up_timeout = 20
         
         self.inet_check_last_time = 0
-        self.inet_check_timeout = 5 # 40
+        self.inet_check_timeout = 40
         self.inet_check_sound_notified = False
         
         self.oled = None
@@ -240,6 +240,9 @@ def main():
 if len(sys.argv) == 2 and sys.argv[1] == '--manual':
     main()
 else:
+    # Give the time for netwirking to be UP.
+    sleep(5)
+    # Start as daemon.
     daemon = Daemonize(
         app="rrouter-daemon",
         pid='/tmp/rrouter-daemon.pid',
