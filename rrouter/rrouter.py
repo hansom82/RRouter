@@ -240,8 +240,8 @@ def main():
 if len(sys.argv) == 2 and sys.argv[1] == '--manual':
     main()
 else:
-    # Give the time for netwirking to be UP.
-    sleep(5)
+    # Give the time for networking to be UP after system start.
+    sleep(7)
     # Start as daemon.
     daemon = Daemonize(
         app="rrouter-daemon",
